@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask; 
 
 class Question {
 
@@ -32,6 +35,25 @@ public class OnlineExam {
     static List<User> users = new ArrayList<>();
     static User loggedInUser;
     static boolean sessionOpen = false;
+
+    public static final long EXAM_DURATION_MS = 30 * 60 * 1000; // 30 minutes
+    {
+        // Set start time
+        Date startTime = new Date(); // Current time
+        System.out.println("Exam starts at: " + startTime);
+
+        // Schedule the end of the exam
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("Exam ends at: " + new Date());
+                // Add code to automatically submit the exam or any other action
+                timer.cancel(); // Stop the timer
+            }
+        }, startTime.getTime() + EXAM_DURATION_MS);
+    }
+    
 
     public static void main(String[] args) {
 
