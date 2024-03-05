@@ -1,6 +1,6 @@
 Oasis Infobyte Intership in Java Development - PROJECT1 - ONLINE EXAMINATION -      
 
-This project has the following fuctionalities :
+  This project has the following fuctionalities :
 1. Login
 2. Update Profile and Password
 3. Selecting answers for MCQs
